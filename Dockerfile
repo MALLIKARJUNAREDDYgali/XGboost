@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y build-essential
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-EXPOSE 8501
+# ✅ Tell Railway we are using port 8080
+EXPOSE 8080
 
-CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# ✅ Run Streamlit on port 8080 instead of 8501
+CMD ["streamlit", "run", "main.py", "--server.port=8080", "--server.address=0.0.0.0"]
